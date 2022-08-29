@@ -21,10 +21,10 @@ const launch = async () => {
         next = false
         const result = await getData(products_offsetData)
         next = true
-        const { products_offset, limit, products_total_count, entitiesData } = result
+        const { products_offset, limit, products_total_count, entities } = result
 
-    console.log(entitiesData.map(e => e?.type));
-        totalProducts += entitiesData.filter(e => e?.type === 'product').length
+    console.log(entities.map(e => e?.type));
+        totalProducts += entities.filter(e => e?.type === 'product').length
         console.log('totalProducts', totalProducts);
         products_offsetData = products_offset
         notEnd = products_offset < products_total_count
